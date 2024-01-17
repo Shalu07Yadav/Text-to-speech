@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* display: grid;
+            place-items: center; */
+        }
+        .searchbar{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        textarea{
+            background-color: rgb(232, 237, 242);
+            border: 2px solid rgb(9, 8, 9);
+          
+            height: 75px;
+            width: 378px;
+        }
+        button{
+            background-color: rgb(38, 202, 49);
+            color: white;
+            margin-top: 40px;
+            height: 3em;
+            width: 9em;
+            border-radius: 30em;
+            font-size: 15px;
+            font-family: inherit;
+            border: none;
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            z-index: 1;
+            box-shadow: 6px 6px 12px #c5c5c5,-6px -6px 12px #ffffff;
+          
+        }
+        button:hover{
+            background-color: green;
+        }
+
+        
+        body{
+            background-color: gray;
+        }
+       
+
+    </style>
+</head>
+<body>
+   
+    <div class="container">
+        <textarea></textarea>
+    </div>
+    <div  class="searchbar">
+        <button>Speak</button>
+    </div>
+    <!-- <textarea></textarea> -->
+    <!-- <button>Speak</button> -->
+    <script>
+        let button=document.querySelector("button");
+        let text=document.querySelector("textarea");
+        button.addEventListener("click",()=>{
+            let utterance=new
+            SpeechSynthesisUtterance(text.value);
+            speechSynthesis.speak(utterance);
+        });
+    </script>
+</body>
+</html>
